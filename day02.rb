@@ -21,8 +21,10 @@ score = 0
 
 array.map do |group|
   # run through score_rule
-  rule = score_rules.select { |rule| group[0] == rule[0] && group[2] == rule[1] }
-  score += (rule[0][2] + rule[0][3])
+  rule = score_rules.find { |rule| group[0] == rule[0] && group[2] == rule[1] }
+  score += (rule[2] + rule[3])
 end
 
 p score
+
+
