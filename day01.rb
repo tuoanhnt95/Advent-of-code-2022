@@ -1,16 +1,8 @@
-#
-require "open-uri"
-require "nokogiri"
-require "http"
-
-url = "https://adventofcode.com/2022/day/1/input"
-file = File.read("calories.txt")
+file = File.read('calories.txt')
 array = file.split("\n\n")
 
 new_array = array.map do |group|
-  group.split("\n").map do |number|
-    number.to_i
-  end.sum
+  group.split("\n").map { |number| number.to_i }.sum
 end
 
 p "Array with #{new_array.length} groups."
